@@ -20,18 +20,21 @@ GoySys é um sistema de gestão completo, desenvolvido em Python, para empresas 
 ## Instalação
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/LBPessanha/goysys
+   git clone https://github.com/LBPessanha/goysys 
+   ```
    
    
-
-## Ative o ambiente virtual:
+## Prepare e ative o ambiente virtual:
     ```bash 
-    python -m venv venv
+    python -m venv venv 
+    source venv/bin/activate
+    ```
 
 
 
 ## Instale e Execute a aplicação:
-    pip install -r requirements.txt
-    python main.py
+    ``` pip install -r requirements.txt
+        python main.py
+    ```
 
 
