@@ -76,6 +76,7 @@ class application():
         # Conteúdo da nova tela (exemplo)
         label = ctk.CTkLabel(nova_tela, text="Bem-vindo à tela principal!", font=("Roboto", 20))
         label.pack(pady=20)
+        
 
        
 application()
