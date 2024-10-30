@@ -1,3 +1,4 @@
+
 import customtkinter as ctk
 from tkinter import *
 
@@ -18,7 +19,7 @@ class Application:
 
     def tela(self):
         win0.geometry('700x400')
-        win0.title('LlBpSystem')
+        win0.title('anteater.dev')
         win0.resizable(False, False)
 
     def tela_login(self):
@@ -66,7 +67,7 @@ class Application:
         # Cria uma nova janela principal após o login
         nova_tela = ctk.CTk()
         nova_tela.geometry("700x400")
-        nova_tela.title("Tela Principal")
+        nova_tela.title("GoySys-V-0")
         nova_tela.resizable(False, False)
 
         # Conteúdo da nova tela principal
