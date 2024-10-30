@@ -33,16 +33,16 @@ class Application:
         label.place(x=120, y=5)
 
         self.username_entry = ctk.CTkEntry(master=login_frame, placeholder_text="Nome do Usuário", width=300,
-                                           font=('Roboto', 14))
+        font=('Roboto', 14))
         self.username_entry.place(x=25, y=85)
         username_label = ctk.CTkLabel(master=login_frame, text='*O campo nome do usuário é obrigatório',
-                                      text_color='green', font=('Roboto', 12)).place(x=25, y=115)
+        text_color='green', font=('Roboto', 12)).place(x=25, y=115)
 
         self.password_entry = ctk.CTkEntry(master=login_frame, placeholder_text="Senha do Usuário", width=300,
-                                           font=('Roboto', 14), show='*')
+        font=('Roboto', 14), show='*')
         self.password_entry.place(x=25, y=165)
         password_label = ctk.CTkLabel(master=login_frame, text='*O campo senha do usuário é obrigatório',
-                                      text_color='green', font=('Roboto', 12)).place(x=25, y=195)
+        text_color='green', font=('Roboto', 12)).place(x=25, y=195)
 
         ctk.CTkCheckBox(master=login_frame, text='Lembrar usuário e senha').place(x=25, y=245)
 
