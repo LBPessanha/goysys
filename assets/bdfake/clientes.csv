@@ -1,0 +1,26 @@
+ID,Nome,CPF/CNPJ,Endereço,Cliente desde
+1,Fernando Alves,123.456.789-00,Rua das Flores, 123, São Paulo - SP,03/2019
+2,Maria Oliveira,12.345.678/0001-90,Rua dos Pinheiros, 456, Rio de Janeiro - RJ,05/2017
+3,João Santos,789.456.123-11,Avenida Brasil, 1000, Curitiba - PR,07/2020
+4,Ana Martins,23.456.789/0001-23,Rua 13 de Maio, 321, Brasília - DF,09/2018
+5,Lucas Ribeiro,456.789.123-22,Avenida Paulista, 900, São Paulo - SP,12/2021
+6,Mariana Costa,34.567.890/0001-45,Rua XV de Novembro, 876, Florianópolis - SC,01/2016
+7,Pedro Ferreira,678.123.456-33,Avenida Independência, 678, Porto Alegre - RS,06/2019
+8,Carla Nunes,45.678.901/0001-56,Rua das Laranjeiras, 123, Recife - PE,11/2018
+9,Rafael Rocha,789.012.345-44,Rua do Comércio, 987, Salvador - BA,04/2015
+10,Paula Mendes,56.789.012/0001-67,Avenida Atlântica, 200, Rio de Janeiro - RJ,02/2021
+11,Fábio Cunha,901.234.567-55,Rua do Porto, 345, Santos - SP,10/2016
+12,Juliana Azevedo,67.890.123/0001-78,Rua da Liberdade, 234, Belo Horizonte - MG,08/2017
+13,André Lopes,234.567.890-66,Avenida das Nações, 567, Brasília - DF,03/2018
+14,Sandra Dias,78.901.234/0001-89,Rua São João, 654, São Paulo - SP,05/2020
+15,Marcos Carvalho,567.890.123-77,Rua Padre Cícero, 789, Fortaleza - CE,01/2022
+16,Patrícia Moraes,89.012.345/0001-90,Avenida Rio Branco, 100, Recife - PE,09/2015
+17,Vinícius Xavier,890.123.456-88,Rua das Palmeiras, 456, Manaus - AM,06/2017
+18,Larissa Souza,90.123.456/0001-01,Rua Sete de Setembro, 321, Belém - PA,07/2016
+19,Felipe Monteiro,012.345.678-99,Rua Primeiro de Maio, 890, São Luís - MA,10/2019
+20,Tatiana Vieira,01.234.567/0001-12,Avenida Afonso Pena, 432, Campo Grande - MS,08/2018
+21,Diego Lima,123.456.789-00,Rua da República, 111, Vitória - ES,04/2020
+22,Renata Farias,234.567.890/0001-34,Rua Princesa Isabel, 654, Florianópolis - SC,05/2017
+23,Bruno Almeida,345.678.901-11,Avenida Beira Mar, 987, Salvador - BA,12/2021
+24,Sílvia Ramos,456.789.012/0001-45,Rua Boa Vista, 456, Recife - PE,07/2015
+25,Leandro Cardoso,678.901.234-22,Rua das Nações Unidas, 999, São Paulo - SP,09/2022
