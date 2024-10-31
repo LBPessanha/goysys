@@ -1,6 +1,14 @@
 
 import customtkinter as ctk
 from tkinter import *
+import os # para manipulação de arquivos de forma mais confiavel
+from tkinter import PhotoImage
+
+def get_image_path(filename):
+    path = os.path.join(os.path.dirname(__file__), "assets", "images", filename)
+    if not os.path.exists(path):
+        print(f"Erro: Arquivo {filename} não encontrado no caminho {path}")
+    return path
 
 # Inicializa a janela de login
 win0 = ctk.CTk()
@@ -23,9 +31,10 @@ class Application:
         win0.resizable(False, False)
 
     def tela_login(self):
-        img = PhotoImage(file='g.png')
+        img = PhotoImage(file=get_image_path("g.png"))
         label_img = ctk.CTkLabel(master=win0, image=img)
         label_img.place(x=10, y=35)
+    # Resto do código
 
         login_frame = ctk.CTkFrame(master=win0, width=350, height=396)
         login_frame.pack(side=RIGHT)
