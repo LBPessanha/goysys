@@ -3,6 +3,7 @@
 ## Descrição
 GoySys é um sistema de gestão completo, desenvolvido em Python, para empresas de segurança privada. A aplicação oferece funcionalidades como cadastro de funcionários, controle de estoque, cadastro de clientes, gestão financeira e alocação de funcionários em postos de trabalho.
 
+
 ## Funcionalidades
 * Cadastro de funcionários
 * Controle de estoque
@@ -25,16 +26,22 @@ GoySys é um sistema de gestão completo, desenvolvido em Python, para empresas 
    
    
 ## Prepare e ative o ambiente virtual:
-    ```bash 
+
+   ```bash
     python -m venv venv 
     source venv/bin/activate
-    ```
+   ```
 
 
 
 ## Instale e Execute a aplicação:
-    ``` pip install -r requirements.txt
-        python main.py
-    ```
+```bash
+    pip install -r requirements.txt
+    python main.py
+```
 
+## Execute o arquivo:
+```bash
+    goysys-v-0.1.py
+```
 

@@ -16,7 +16,7 @@ funcionarios = [
         'RG': fake.rg(),
         'Cargo': fake.job(),
     }
-    for i in range(5)
+    for i in range(5) # inserir a quantidade de funcionarios
 ]
 
 # Gerar dados para clientes
@@ -28,7 +28,7 @@ clientes = [
         'Endereço': fake.address().replace('\n', ', '),
         'Cliente desde': f"{fake.month():02d}/{fake.year()}"
     }
-    for i in range(25)
+    for i in range(25) # inserir a quantidade de clientes
 ]
 
 # Criar DataFrames
