@@ -23,7 +23,7 @@ class Application:
         win0.resizable(False, False)
 
     def tela_login(self):
-        img = PhotoImage(file='g.png')
+        img = PhotoImage(file='goytaca-logo-original.png')
         label_img = ctk.CTkLabel(master=win0, image=img)
         label_img.place(x=10, y=35)
 
@@ -38,12 +38,15 @@ class Application:
         self.username_entry.place(x=25, y=85)
         username_label = ctk.CTkLabel(master=login_frame, text='*O campo nome do usuário é obrigatório',
         text_color='green', font=('Roboto', 12)).place(x=25, y=115)
+        self.username_entry.bind('<Return>', lambda event: verificar_login())
+        #self.username_entry.focus_set()
 
         self.password_entry = ctk.CTkEntry(master=login_frame, placeholder_text="Senha do Usuário", width=300,
         font=('Roboto', 14), show='*')
         self.password_entry.place(x=25, y=165)
         password_label = ctk.CTkLabel(master=login_frame, text='*O campo senha do usuário é obrigatório',
         text_color='green', font=('Roboto', 12)).place(x=25, y=195)
+        self.password_entry.bind('<Return>', lambda event: verificar_login())
 
         ctk.CTkCheckBox(master=login_frame, text='Lembrar usuário e senha').place(x=25, y=245)
 
@@ -58,10 +61,16 @@ class Application:
                 self.win0.destroy()  # Fechar a janela de login
                 self.abrir_proxima_tela()  # Abrir a tela inicial
             else:
-                print('Usuário ou Senha inválidos.')
+                self.message_label = ctk.CTkLabel(master=login_frame, text="Usúario ou Senha inválidos", text_color="red", 
+                font=("Roboto", 12))
+                self.message_label.place(x=100, y=350)
 
+        
+        
         button = ctk.CTkButton(master=login_frame, text='LOGIN', width=300, command=verificar_login)
         button.place(x=25, y=305)
+
+        # Tela principal
     
     def abrir_proxima_tela(self):
         # Cria uma nova janela principal após o login
@@ -70,9 +79,40 @@ class Application:
         nova_tela.title("GoySys-V-0")
         nova_tela.resizable(False, False)
 
+        img = PhotoImage(file='goytaca-logo-originalt.png')
+        label_img = ctk.CTkLabel(master=nova_tela, image=img)
+        label_img.place(x=180, y=55)
+
         # Conteúdo da nova tela principal
-        label = ctk.CTkLabel(nova_tela, text="Bem-vindo à tela principal!", font=("Roboto", 20))
+        label = ctk.CTkLabel(nova_tela, text="Bem-vindo ao Sistema Goytacá!", font=("Roboto", 20))
         label.pack(pady=20)
+
+        button = ctk.CTkButton(master=nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
+        button.place(x=25, y=85)
+
+        button = ctk.CTkButton(master=nova_tela, text='CONSULTA', font=('Roboto', 15), width=300, height=50)
+        button.place(x=370, y=85)
+
+        button = ctk.CTkButton(master=nova_tela, text='ESTOUE', font=('Roboto', 15), width=300, height=50)
+        button.place(x=25, y=175)
+
+        button = ctk.CTkButton(master=nova_tela, text='RELATÓRIO', font=('Roboto', 15), width=300, height=50)
+        button.place(x=370, y=175)
+
+        button = ctk.CTkButton(master=nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
+        button.place(x=25, y=265)
+
+        button = ctk.CTkButton(master=nova_tela, text='CONSULTA', font=('Roboto', 15), width=300, height=50)
+        button.place(x=370, y=265)
+
+        button = ctk.CTkButton(master=nova_tela, text='TROCAR USUÁRIO', font=('Roboto', 12), width=150, 
+        fg_color=('gray20'), hover_color='green')
+        button.place(x=100, y=345)
+
+        button = ctk.CTkButton(master=nova_tela, text='SAIR', font=('Roboto', 12), width=150, fg_color=('gray20'),
+        hover_color='green')
+        button.place(x=445, y=345)
+
 
         # Exibe a nova janela principal
         nova_tela.mainloop()
