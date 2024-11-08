@@ -11,6 +11,7 @@ class Application:
         self.tema()
         self.tela()
         self.tela_login()
+        #self.tela_principal = None #processo de retorno para tele de login
         win0.mainloop()
 
     def tema(self):
@@ -65,8 +66,6 @@ class Application:
                 font=("Roboto", 12))
                 self.message_label.place(x=100, y=350)
 
-        
-        
         button = ctk.CTkButton(master=login_frame, text='LOGIN', width=300, command=verificar_login)
         button.place(x=25, y=305)
 
@@ -87,17 +86,17 @@ class Application:
         label = ctk.CTkLabel(nova_tela, text="Bem-vindo ao Sistema Goytacá!", font=("Roboto", 20))
         label.pack(pady=20)
 
-        button = ctk.CTkButton(master=nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
-        button.place(x=25, y=85)
+        button_cadastro = ctk.CTkButton(master=nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
+        button_cadastro.place(x=25, y=85)
 
-        button = ctk.CTkButton(master=nova_tela, text='CONSULTA', font=('Roboto', 15), width=300, height=50)
-        button.place(x=370, y=85)
+        button_consulta = ctk.CTkButton(master=nova_tela, text='CONSULTA', font=('Roboto', 15), width=300, height=50)
+        button_consulta.place(x=370, y=85)
 
-        button = ctk.CTkButton(master=nova_tela, text='ESTOUE', font=('Roboto', 15), width=300, height=50)
-        button.place(x=25, y=175)
+        button_estoque = ctk.CTkButton(master=nova_tela, text='ESTOUE', font=('Roboto', 15), width=300, height=50)
+        button_estoque.place(x=25, y=175)
 
-        button = ctk.CTkButton(master=nova_tela, text='RELATÓRIO', font=('Roboto', 15), width=300, height=50)
-        button.place(x=370, y=175)
+        button_relatorio = ctk.CTkButton(master=nova_tela, text='RELATÓRIO', font=('Roboto', 15), width=300, height=50)
+        button_relatorio.place(x=370, y=175)
 
         button = ctk.CTkButton(master=nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
         button.place(x=25, y=265)
@@ -105,17 +104,26 @@ class Application:
         button = ctk.CTkButton(master=nova_tela, text='CONSULTA', font=('Roboto', 15), width=300, height=50)
         button.place(x=370, y=265)
 
-        button = ctk.CTkButton(master=nova_tela, text='TROCAR USUÁRIO', font=('Roboto', 12), width=150, 
-        fg_color=('gray20'), hover_color='green')
-        button.place(x=100, y=345)
+        # processo para retorno para tela de login
+        #self.tela_principal = nova_tela
+        #nova_tela.after_cancel(all) 
 
-        button = ctk.CTkButton(master=nova_tela, text='SAIR', font=('Roboto', 12), width=150, fg_color=('gray20'),
-        hover_color='green')
-        button.place(x=445, y=345)
+        button_troca_usuario = ctk.CTkButton(master=nova_tela, text='TROCAR USUÁRIO', font=('Roboto', 12), width=150, 
+        fg_color=('gray20'), hover_color='green', command=self.voltar_tela_login)
+        button_troca_usuario.place(x=100, y=345)
 
+        button_sair = ctk.CTkButton(master=nova_tela, text='SAIR', font=('Roboto', 12), width=150, fg_color=('gray20'),
+        hover_color='green', command=nova_tela.quit)
+        button_sair.place(x=445, y=345)
 
         # Exibe a nova janela principal
-        nova_tela.mainloop()
+        #nova_tela.mainloop()
+
+    # processo para retorno para tela de login
+    #def voltar_tela_login(self):
+        #self.tela_principal.destroy()  # Destrói a tela principal atual
+        #self.tela_login() # Chama a função tela_login novamente
+
 
 # Inicializa a aplicação
 Application()
