@@ -109,7 +109,7 @@ class Application:
         #nova_tela.after_cancel(all) 
 
         button_troca_usuario = ctk.CTkButton(master=nova_tela, text='TROCAR USUÁRIO', font=('Roboto', 12), width=150, 
-        fg_color=('gray20'), hover_color='green', command=self.voltar_tela_login)
+        fg_color=('gray20'), hover_color='green') #command=self.voltar_tela_login
         button_troca_usuario.place(x=100, y=345)
 
         button_sair = ctk.CTkButton(master=nova_tela, text='SAIR', font=('Roboto', 12), width=150, fg_color=('gray20'),
