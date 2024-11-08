@@ -1,0 +1,18 @@
+CREATE TABLE clientes (
+    ID INTEGER PRIMARY KEY,
+    Nome TEXT,
+    CPF_CNPJ TEXT,
+    Endereco TEXT,
+    Numero INT,
+    Cidade TEXT,
+    ClienteDesde TEXT
+);
+
+CREATE TABLE funcionarios (
+    ID INTEGER PRIMARY KEY,
+    Nome TEXT,
+    CPF TEXT,
+    RG TEXT,
+    Cargo TEXT
+);
+

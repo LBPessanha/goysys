@@ -1,4 +1,4 @@
-ID,Nome,CPF/CNPJ,Endereço,Cliente desde
+ID,Nome,CPF_CNPJ,Endereco,Numero,Cidade,ClienteDesde
 1,Fernando Alves,123.456.789-00,Rua das Flores, 123, São Paulo - SP,03/2019
 2,Maria Oliveira,12.345.678/0001-90,Rua dos Pinheiros, 456, Rio de Janeiro - RJ,05/2017
 3,João Santos,789.456.123-11,Avenida Brasil, 1000, Curitiba - PR,07/2020
