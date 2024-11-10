@@ -25,7 +25,7 @@ class application():
         win0.resizable(False, False)
 
     def tela_login(self):
-        img = PhotoImage(file='g.png')
+        img = PhotoImage(file='goytaca-logo-original.png')
         label_img = ctk.CTkLabel(master=win0, image=img)
         label_img.place(x=10, y=35)
 

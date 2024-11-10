@@ -1,6 +1,7 @@
 
 import customtkinter as ctk
 from tkinter import *
+from PIL import Image
 
 # Inicializa a janela de login
 win0 = ctk.CTk()
@@ -24,8 +25,8 @@ class Application:
         win0.resizable(False, False)
 
     def tela_login(self):
-        img = PhotoImage(file='goytaca-logo-original.png')
-        label_img = ctk.CTkLabel(master=win0, image=img)
+        self.img_login = ctk.CTkImage(Image.open('goytaca-logo-original.png'), size=(320, 320))
+        label_img = ctk.CTkLabel(master=win0, image=self.img_login)
         label_img.place(x=10, y=35)
 
         login_frame = ctk.CTkFrame(master=win0, width=350, height=396)
@@ -59,7 +60,7 @@ class Application:
             senha_correta = 'admin'
 
             if username == usuario_correto and password == senha_correta:
-                self.win0.destroy()  # Fechar a janela de login
+                self.win0.withdraw()  # Fechar a janela de login
                 self.abrir_proxima_tela()  # Abrir a tela inicial
             else:
                 self.message_label = ctk.CTkLabel(master=login_frame, text="Usúario ou Senha inválidos", text_color="red", 
@@ -78,9 +79,9 @@ class Application:
         nova_tela.title("GoySys-V-0")
         nova_tela.resizable(False, False)
 
-        img = PhotoImage(file='goytaca-logo-originalt.png')
-        label_img = ctk.CTkLabel(master=nova_tela, image=img)
-        label_img.place(x=180, y=55)
+        #self.img_proxima_tela = ctk.CTkImage(Image.open('goytaca-logo-originalt.png')) #size=(320, 320))
+        #label_img = ctk.CTkLabel(master=nova_tela, image=self.img_proxima_tela)
+        #label_img.place(x=180, y=55)
 
         # Conteúdo da nova tela principal
         label = ctk.CTkLabel(nova_tela, text="Bem-vindo ao Sistema Goytacá!", font=("Roboto", 20))
@@ -89,41 +90,31 @@ class Application:
         button_cadastro = ctk.CTkButton(master=nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
         button_cadastro.place(x=25, y=85)
 
-        button_consulta = ctk.CTkButton(master=nova_tela, text='CONSULTA', font=('Roboto', 15), width=300, height=50)
+        button_consulta = ctk.CTkButton(master=nova_tela, text='VIGILANTES', font=('Roboto', 15), width=300, height=50)
         button_consulta.place(x=370, y=85)
 
-        button_estoque = ctk.CTkButton(master=nova_tela, text='ESTOUE', font=('Roboto', 15), width=300, height=50)
+        button_estoque = ctk.CTkButton(master=nova_tela, text='CLIENTES', font=('Roboto', 15), width=300, height=50)
         button_estoque.place(x=25, y=175)
 
-        button_relatorio = ctk.CTkButton(master=nova_tela, text='RELATÓRIO', font=('Roboto', 15), width=300, height=50)
+        button_relatorio = ctk.CTkButton(master=nova_tela, text='FINANCEIRO', font=('Roboto', 15), width=300, height=50)
         button_relatorio.place(x=370, y=175)
 
-        button = ctk.CTkButton(master=nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
+        button = ctk.CTkButton(master=nova_tela, text='SISTEMA', font=('Roboto', 15), width=300, height=50)
         button.place(x=25, y=265)
 
-        button = ctk.CTkButton(master=nova_tela, text='CONSULTA', font=('Roboto', 15), width=300, height=50)
+        button = ctk.CTkButton(master=nova_tela, text='ESTOQUE', font=('Roboto', 15), width=300, height=50)
         button.place(x=370, y=265)
 
-        # processo para retorno para tela de login
-        #self.tela_principal = nova_tela
-        #nova_tela.after_cancel(all) 
-
         button_troca_usuario = ctk.CTkButton(master=nova_tela, text='TROCAR USUÁRIO', font=('Roboto', 12), width=150, 
-        fg_color=('gray20'), hover_color='green') #command=self.voltar_tela_login
+        fg_color=('gray20'), hover_color='green') 
         button_troca_usuario.place(x=100, y=345)
 
         button_sair = ctk.CTkButton(master=nova_tela, text='SAIR', font=('Roboto', 12), width=150, fg_color=('gray20'),
         hover_color='green', command=nova_tela.quit)
         button_sair.place(x=445, y=345)
 
-        # Exibe a nova janela principal
-        #nova_tela.mainloop()
-
-    # processo para retorno para tela de login
-    #def voltar_tela_login(self):
-        #self.tela_principal.destroy()  # Destrói a tela principal atual
-        #self.tela_login() # Chama a função tela_login novamente
-
+        nova_tela.mainloop()
+       
 
 # Inicializa a aplicação
 Application()
