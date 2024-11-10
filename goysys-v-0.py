@@ -93,20 +93,25 @@ class Application:
         command=self.janela_cadastro)
         button_cadastro.place(x=25, y=85)
                 
-        button_consulta = ctk.CTkButton(master=self.nova_tela, text='VIGILANTES', font=('Roboto', 15), width=300, height=50)
-        button_consulta.place(x=370, y=85)
+        button_vigilantes = ctk.CTkButton(master=self.nova_tela, text='VIGILANTES', font=('Roboto', 15), width=300, height=50,
+        command=self.janela_vigilantes)
+        button_vigilantes.place(x=370, y=85)
 
-        button_estoque = ctk.CTkButton(master=self.nova_tela, text='CLIENTES', font=('Roboto', 15), width=300, height=50)
-        button_estoque.place(x=25, y=175)
+        button_clientes = ctk.CTkButton(master=self.nova_tela, text='CLIENTES', font=('Roboto', 15), width=300, height=50,
+        command=self.janela_clientes)
+        button_clientes.place(x=25, y=175)
 
-        button_relatorio = ctk.CTkButton(master=self.nova_tela, text='FINANCEIRO', font=('Roboto', 15), width=300, height=50)
-        button_relatorio.place(x=370, y=175)
+        button_financ = ctk.CTkButton(master=self.nova_tela, text='FINANCEIRO', font=('Roboto', 15), width=300, height=50,
+        command=self.janela_financ)
+        button_financ.place(x=370, y=175)
 
-        button = ctk.CTkButton(master=self.nova_tela, text='SISTEMA', font=('Roboto', 15), width=300, height=50)
-        button.place(x=25, y=265)
+        button_sistema = ctk.CTkButton(master=self.nova_tela, text='SISTEMA', font=('Roboto', 15), width=300, height=50,
+        command=self.janela_sistema)
+        button_sistema.place(x=25, y=265)
 
-        button = ctk.CTkButton(master=self.nova_tela, text='ESTOQUE', font=('Roboto', 15), width=300, height=50)
-        button.place(x=370, y=265)
+        button_estoque = ctk.CTkButton(master=self.nova_tela, text='ESTOQUE', font=('Roboto', 15), width=300, height=50,
+        command=self.janela_estoque)
+        button_estoque.place(x=370, y=265)
 
         button_troca_usuario = ctk.CTkButton(master=self.nova_tela, text='TROCAR USUÁRIO', font=('Roboto', 12), width=150, 
         fg_color=('gray20'), hover_color='green', command=self.voltar_login) 
@@ -125,6 +130,7 @@ class Application:
         self.username_entry.delete(0, 'end')
         self.password_entry.delete(0, 'end')
     
+    # Janela Cadastro
     def janela_cadastro(self):
         self.nova_tela.withdraw()
         nova_janela = ctk.CTk()
@@ -133,6 +139,107 @@ class Application:
         nova_janela.resizable(False, False)
 
         label = ctk.CTkLabel(nova_janela, text="Sistema de Cadastro", font=("Roboto", 20))
+        label.pack(pady=20)
+
+        def voltar_principal():
+            nova_janela.withdraw()
+            self.nova_tela.deiconify()
+        
+        button_voltar = ctk.CTkButton(master=nova_janela, text='Voltar', font=('Roboto', 12), width=150, fg_color=('gray20'),
+        hover_color='green', command=voltar_principal)
+        button_voltar.place(x=325, y=445)
+
+        nova_janela.mainloop()
+    
+    # Janela Vigilantes
+    def janela_vigilantes(self):
+        self.nova_tela.withdraw()
+        nova_janela = ctk.CTk()
+        nova_janela.title('GoySys-V-0')
+        nova_janela.geometry('800x500')
+        nova_janela.resizable(False, False)
+
+        label = ctk.CTkLabel(nova_janela, text="Sistema de Vigilantes", font=("Roboto", 20))
+        label.pack(pady=20)
+
+        def voltar_principal():
+            nova_janela.withdraw()
+            self.nova_tela.deiconify()
+        
+        button_voltar = ctk.CTkButton(master=nova_janela, text='Voltar', font=('Roboto', 12), width=150, fg_color=('gray20'),
+        hover_color='green', command=voltar_principal)
+        button_voltar.place(x=325, y=445)
+
+        nova_janela.mainloop()
+
+    # Janela Clientes
+    def janela_clientes(self):
+        self.nova_tela.withdraw()
+        nova_janela = ctk.CTk()
+        nova_janela.title('GoySys-V-0')
+        nova_janela.geometry('800x500')
+        nova_janela.resizable(False, False)
+
+        label = ctk.CTkLabel(nova_janela, text="Sistema de Clientes", font=("Roboto", 20))
+        label.pack(pady=20)
+
+        def voltar_principal():
+            nova_janela.withdraw()
+            self.nova_tela.deiconify()
+        
+        button_voltar = ctk.CTkButton(master=nova_janela, text='Voltar', font=('Roboto', 12), width=150, fg_color=('gray20'),
+        hover_color='green', command=voltar_principal)
+        button_voltar.place(x=325, y=445)
+
+        nova_janela.mainloop()
+    
+    # Janela Financeiro
+    def janela_financ(self):
+        self.nova_tela.withdraw()
+        nova_janela = ctk.CTk()
+        nova_janela.title('GoySys-V-0')
+        nova_janela.geometry('800x500')
+        nova_janela.resizable(False, False)
+
+        label = ctk.CTkLabel(nova_janela, text="Sistema Financeiro", font=("Roboto", 20))
+        label.pack(pady=20)
+
+        def voltar_principal():
+            nova_janela.withdraw()
+            self.nova_tela.deiconify()
+        
+        button_voltar = ctk.CTkButton(master=nova_janela, text='Voltar', font=('Roboto', 12), width=150, fg_color=('gray20'),
+        hover_color='green', command=voltar_principal)
+        button_voltar.place(x=325, y=445)
+    
+    # Janela Sistema
+    def janela_sistema(self):
+        self.nova_tela.withdraw()
+        nova_janela = ctk.CTk()
+        nova_janela.title('GoySys-V-0')
+        nova_janela.geometry('800x500')
+        nova_janela.resizable(False, False)
+
+        label = ctk.CTkLabel(nova_janela, text="Sistema", font=("Roboto", 20))
+        label.pack(pady=20)
+
+        def voltar_principal():
+            nova_janela.withdraw()
+            self.nova_tela.deiconify()
+        
+        button_voltar = ctk.CTkButton(master=nova_janela, text='Voltar', font=('Roboto', 12), width=150, fg_color=('gray20'),
+        hover_color='green', command=voltar_principal)
+        button_voltar.place(x=325, y=445)
+
+    # Janela Estoque
+    def janela_estoque(self):
+        self.nova_tela.withdraw()
+        nova_janela = ctk.CTk()
+        nova_janela.title('GoySys-V-0')
+        nova_janela.geometry('800x500')
+        nova_janela.resizable(False, False)
+
+        label = ctk.CTkLabel(nova_janela, text="Sistema de Estoque", font=("Roboto", 20))
         label.pack(pady=20)
 
         def voltar_principal():
