@@ -89,7 +89,8 @@ class Application:
         label = ctk.CTkLabel(self.nova_tela, text="Bem-vindo ao Sistema Goytacá!", font=("Roboto", 20))
         label.pack(pady=20)
 
-        button_cadastro = ctk.CTkButton(master=self.nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
+        button_cadastro = ctk.CTkButton(master=self.nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50,
+        command=self.janela_cadastro)
         button_cadastro.place(x=25, y=85)
                 
         button_consulta = ctk.CTkButton(master=self.nova_tela, text='VIGILANTES', font=('Roboto', 15), width=300, height=50)
@@ -100,8 +101,6 @@ class Application:
 
         button_relatorio = ctk.CTkButton(master=self.nova_tela, text='FINANCEIRO', font=('Roboto', 15), width=300, height=50)
         button_relatorio.place(x=370, y=175)
-
-
 
         button = ctk.CTkButton(master=self.nova_tela, text='SISTEMA', font=('Roboto', 15), width=300, height=50)
         button.place(x=25, y=265)
@@ -125,8 +124,26 @@ class Application:
         self.win0.deiconify()
         self.username_entry.delete(0, 'end')
         self.password_entry.delete(0, 'end')
+    
+    def janela_cadastro(self):
+        self.nova_tela.withdraw()
+        nova_janela = ctk.CTk()
+        nova_janela.title('GoySys-V-0')
+        nova_janela.geometry('800x500')
+        nova_janela.resizable(False, False)
 
-                               
+        label = ctk.CTkLabel(nova_janela, text="Sistema de Cadastro", font=("Roboto", 20))
+        label.pack(pady=20)
+
+        def voltar_principal():
+            nova_janela.withdraw()
+            self.nova_tela.deiconify()
+        
+        button_voltar = ctk.CTkButton(master=nova_janela, text='Voltar', font=('Roboto', 12), width=150, fg_color=('gray20'),
+        hover_color='green', command=voltar_principal)
+        button_voltar.place(x=325, y=445)
+
+        nova_janela.mainloop()
        
        
 
