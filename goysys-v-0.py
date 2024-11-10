@@ -3,6 +3,7 @@ import customtkinter as ctk
 from tkinter import *
 from PIL import Image
 
+
 # Inicializa a janela de login
 win0 = ctk.CTk()
 
@@ -12,7 +13,7 @@ class Application:
         self.tema()
         self.tela()
         self.tela_login()
-        #self.tela_principal = None #processo de retorno para tele de login
+        self.nova_tela = None #processo de retorno para tele de login
         win0.mainloop()
 
     def tema(self):
@@ -74,46 +75,59 @@ class Application:
     
     def abrir_proxima_tela(self):
         # Cria uma nova janela principal após o login
-        nova_tela = ctk.CTk()
-        nova_tela.geometry("700x400")
-        nova_tela.title("GoySys-V-0")
-        nova_tela.resizable(False, False)
+        self.nova_tela = ctk.CTk()
+        self.nova_tela.geometry("700x400")
+        self.nova_tela.title("GoySys-V-0")
+        self.nova_tela.resizable(False, False)
 
-        #self.img_proxima_tela = ctk.CTkImage(Image.open('goytaca-logo-originalt.png')) #size=(320, 320))
-        #label_img = ctk.CTkLabel(master=nova_tela, image=self.img_proxima_tela)
-        #label_img.place(x=180, y=55)
+        #self.img_login = ctk.CTkImage(Image.open('goytaca-logo-original.png'), size=(320, 320))
+        #label_img = ctk.CTkLabel(master=nova_tela, image=self.img_login)
+        #label_img.place(x=10, y=35)
 
+        
         # Conteúdo da nova tela principal
-        label = ctk.CTkLabel(nova_tela, text="Bem-vindo ao Sistema Goytacá!", font=("Roboto", 20))
+        label = ctk.CTkLabel(self.nova_tela, text="Bem-vindo ao Sistema Goytacá!", font=("Roboto", 20))
         label.pack(pady=20)
 
-        button_cadastro = ctk.CTkButton(master=nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
+        button_cadastro = ctk.CTkButton(master=self.nova_tela, text='CADASTRO', font=('Roboto', 15), width=300, height=50)
         button_cadastro.place(x=25, y=85)
-
-        button_consulta = ctk.CTkButton(master=nova_tela, text='VIGILANTES', font=('Roboto', 15), width=300, height=50)
+                
+        button_consulta = ctk.CTkButton(master=self.nova_tela, text='VIGILANTES', font=('Roboto', 15), width=300, height=50)
         button_consulta.place(x=370, y=85)
 
-        button_estoque = ctk.CTkButton(master=nova_tela, text='CLIENTES', font=('Roboto', 15), width=300, height=50)
+        button_estoque = ctk.CTkButton(master=self.nova_tela, text='CLIENTES', font=('Roboto', 15), width=300, height=50)
         button_estoque.place(x=25, y=175)
 
-        button_relatorio = ctk.CTkButton(master=nova_tela, text='FINANCEIRO', font=('Roboto', 15), width=300, height=50)
+        button_relatorio = ctk.CTkButton(master=self.nova_tela, text='FINANCEIRO', font=('Roboto', 15), width=300, height=50)
         button_relatorio.place(x=370, y=175)
 
-        button = ctk.CTkButton(master=nova_tela, text='SISTEMA', font=('Roboto', 15), width=300, height=50)
+
+
+        button = ctk.CTkButton(master=self.nova_tela, text='SISTEMA', font=('Roboto', 15), width=300, height=50)
         button.place(x=25, y=265)
 
-        button = ctk.CTkButton(master=nova_tela, text='ESTOQUE', font=('Roboto', 15), width=300, height=50)
+        button = ctk.CTkButton(master=self.nova_tela, text='ESTOQUE', font=('Roboto', 15), width=300, height=50)
         button.place(x=370, y=265)
 
-        button_troca_usuario = ctk.CTkButton(master=nova_tela, text='TROCAR USUÁRIO', font=('Roboto', 12), width=150, 
-        fg_color=('gray20'), hover_color='green') 
+        button_troca_usuario = ctk.CTkButton(master=self.nova_tela, text='TROCAR USUÁRIO', font=('Roboto', 12), width=150, 
+        fg_color=('gray20'), hover_color='green', command=self.voltar_login) 
         button_troca_usuario.place(x=100, y=345)
 
-        button_sair = ctk.CTkButton(master=nova_tela, text='SAIR', font=('Roboto', 12), width=150, fg_color=('gray20'),
-        hover_color='green', command=nova_tela.quit)
+        button_sair = ctk.CTkButton(master=self.nova_tela, text='SAIR', font=('Roboto', 12), width=150, fg_color=('gray20'),
+        hover_color='green', command=self.nova_tela.quit)
         button_sair.place(x=445, y=345)
 
-        nova_tela.mainloop()
+        self.nova_tela.mainloop()
+
+    def voltar_login(self):
+        if self.nova_tela is not None:
+            self.nova_tela.withdraw()
+        self.win0.deiconify()
+        self.username_entry.delete(0, 'end')
+        self.password_entry.delete(0, 'end')
+
+                               
+       
        
 
 # Inicializa a aplicação
