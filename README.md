@@ -1,5 +1,6 @@
 # GoySys - Sistema de Gestão para Empresas de Segurança
 
+## Atenção: Em construção ##
 ## Descrição
 GoySys é um sistema de gestão completo, desenvolvido em Python, para empresas de segurança privada. A aplicação oferece funcionalidades como cadastro de funcionários, controle de estoque, cadastro de clientes, gestão financeira e alocação de funcionários em postos de trabalho.
 
