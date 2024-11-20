@@ -43,6 +43,6 @@ GoySys é um sistema de gestão completo, desenvolvido em Python, para empresas 
 
 ## Execute o arquivo:
 ```bash
-    goysys-v-0.1.py
+    goysys-v-0.py
 ```
 
